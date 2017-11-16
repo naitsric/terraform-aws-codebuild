@@ -6,7 +6,7 @@ data "aws_region" "default" {
 
 # Define composite variables for resources
 module "label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.2.1"
+  source     = "git::https://github.com/naitsric/terraform-null-label.git?ref=tags/0.2.1"
   namespace  = "${var.namespace}"
   name       = "${var.name}"
   stage      = "${var.stage}"
@@ -77,7 +77,7 @@ resource "aws_codebuild_project" "default" {
   service_role = "${aws_iam_role.default.arn}"
 
   artifacts {
-    type = "CODEPIPELINE"
+    type = "S3"
   }
 
   environment {
