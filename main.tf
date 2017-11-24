@@ -77,7 +77,7 @@ resource "aws_codebuild_project" "default" {
   service_role = "${aws_iam_role.default.arn}"
 
   artifacts {
-    type = "S3"
+    type = "CODEPIPELINE"
   }
 
   environment {
